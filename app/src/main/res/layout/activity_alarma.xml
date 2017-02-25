@@ -20,7 +20,7 @@
         android:layout_alignParentTop="true"
         android:textAppearance="@style/TextAppearance.AppCompat.Display4"
         android:textAlignment="center"
-        android:textSize="75sp" />
+        android:textSize="36sp" />
 
     <Button
         android:text="Activar Alarma"

@@ -1,6 +1,7 @@
 package com.argentuino.ingreso;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -35,6 +36,7 @@ public class AstunaActivity extends AppCompatActivity {
     private final static int INTERVAL = 1000 * 5; //5 segundos
     private Handler mHandler;
     private static Boolean alarmaBool = false;
+    private Boolean alarmaSeteadaBool=false;
     private Spinner spinnerDispositivos;
     private String urlDispositivos;
     private String[] values;
@@ -75,6 +77,7 @@ public class AstunaActivity extends AppCompatActivity {
             urlDispositivos = "http://astun.com.ar/astuna01/jsonDispositivosId.php?id_usuario=" + bundleId.getString("id");
             new AstunaActivity.JSONTaskDispositivos().execute(urlDispositivos);
 
+            alarmaSeteadaBool=true;
         }
 
         ScheduledExecutorService scheduler =
@@ -187,7 +190,16 @@ public class AstunaActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
-            temperatura.setText(result);
+            String resultEnt=result.substring(0,2);
+            String resultDec=result.substring(3,4);
+            String resultTun=resultEnt+","+resultDec;
+            temperatura.setText(resultTun);
+
+            if(alarmaSeteadaBool) {
+                if (Integer.parseInt(textViewAlarma.getText().toString()) > Integer.parseInt(resultEnt)) {
+                    temperatura.setTextColor(Color.RED);
+                }
+            }
         }
     }
 
@@ -278,7 +290,7 @@ public class AstunaActivity extends AppCompatActivity {
     public void cargarSpinner(String[] values) {
 
         dataAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, values);
+                R.layout.spinner_item, values);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerDispositivos.setAdapter(dataAdapter);
         spinnerBool=true;

@@ -9,7 +9,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.argentuino.ingreso.AstunaActivity">
+    tools:context="com.argentuino.ingreso.AstunaActivity"
+    android:background="@drawable/astunbackground">
 
     <TextView
         android:layout_width="wrap_content"
@@ -18,13 +19,28 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display4"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="53dp"
-        android:layout_marginTop="53dp"/>
+        android:layout_marginTop="53dp"
+        android:textColor="@android:color/holo_blue_bright"
+        style="?android:attr/absListViewStyle"
+        android:textSize="94sp" />
 
     <Spinner
         android:id="@+id/spinnerDispositivos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewAlarma"
+        android:textSize="48sp"
+        android:textColor="@android:color/holo_red_light"
+        android:layout_alignBottom="@+id/ImageButtonAlarma"
+        android:layout_toRightOf="@+id/ImageButtonAlarma"
+        android:layout_toEndOf="@+id/ImageButtonAlarma"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp" />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -34,38 +50,8 @@
         android:background="@android:color/transparent"
         android:adjustViewBounds="false"
         android:scaleType="fitXY"
-        android:layout_marginLeft="25dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="120dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textViewAlarma"
-        android:textSize="48sp"
-        android:textColor="@android:color/holo_red_dark"
-        android:layout_alignBottom="@+id/ImageButtonAlarma"
-        android:layout_toRightOf="@+id/ImageButtonAlarma"
-        android:layout_toEndOf="@+id/ImageButtonAlarma"
-        android:layout_marginLeft="15dp"
-        android:layout_marginStart="15dp" />
-
-    <Button
-        android:text="+"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textViewAlarma"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="25dp"
-        android:layout_marginEnd="25dp"
-        android:id="@+id/button"
-        android:textSize="54sp"
-        android:textColor="@color/colorAccent"
-        android:background="@android:color/transparent"
-        android:layout_alignTop="@+id/ImageButtonAlarma" />
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

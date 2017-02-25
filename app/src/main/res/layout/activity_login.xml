@@ -8,7 +8,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.argentuino.ingreso.LoginActivity">
+    tools:context="com.argentuino.ingreso.LoginActivity"
+    android:background="@drawable/fondoastun">
 
     <!-- Login progress -->
     <ProgressBar
@@ -33,7 +34,8 @@
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:textColorHint="@android:color/holo_blue_bright">
 
                 <AutoCompleteTextView
                     android:id="@+id/email"
@@ -42,13 +44,17 @@
                     android:hint="@string/prompt_email"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    android:textColor="@android:color/holo_blue_bright"
+                    android:textColorHint="@android:color/holo_blue_bright"
+                    android:textColorHighlight="@android:color/holo_blue_bright" />
 
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:textColorHint="@android:color/holo_blue_bright">
 
                 <EditText
                     android:id="@+id/password"
@@ -60,7 +66,8 @@
                     android:imeOptions="actionUnspecified"
                     android:inputType="textPassword"
                     android:maxLines="1"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    android:textColor="@android:color/holo_blue_bright" />
 
             </android.support.design.widget.TextInputLayout>
 
